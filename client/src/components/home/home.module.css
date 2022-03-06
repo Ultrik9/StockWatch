@@ -1,0 +1,66 @@
+:root {
+    --home_size: 110px;
+}
+.home_container {
+    width: 100%;
+    min-width: 320px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home_wrap {
+    width: 600px;
+    min-width: 320px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: var(--home_size);
+    height: var(--home_size);
+    padding: 20px;
+    background-color: #1976d2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_text {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.name {
+    height: var(--home_size);
+    font-size: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #111111;
+    background-color: #e7e7e7;
+    line-height: var(--home_size);
+}
+
+.login_text {
+    font-size: 16px;
+}
+
+.login_text > a {
+    text-decoration: none;
+    color: #626262;
+}
+.login_text > a:hover {
+    text-decoration: underline;
+}

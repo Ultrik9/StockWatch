@@ -1,0 +1,30 @@
+
+/*************************/
+
+.page_container {
+    width: 100%;
+    max-width: 1200px;
+    min-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section_wrap {
+    width: 100%;
+    min-width: 320px;
+    margin-top: calc(64px + 50px);
+    margin-bottom: calc(64px + 50px);
+    padding: 50px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    border: #E8E8E8 solid 1px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+}
+
+
+
+
+
+

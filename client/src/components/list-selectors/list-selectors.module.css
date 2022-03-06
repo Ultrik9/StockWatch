@@ -1,0 +1,10 @@
+.watch_groups {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.chip {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}

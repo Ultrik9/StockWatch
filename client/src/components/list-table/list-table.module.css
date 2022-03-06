@@ -1,0 +1,137 @@
+.table_header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.table_row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.table_row_delete {
+    padding: 10px;
+}
+
+.delete_icon {
+    color: #9d9d9d;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.delete_icon:hover {
+    color: #383838;
+}
+
+.table_name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.table_change, .table_gain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.table_name_symbol {
+    font-size: 22px;
+}
+
+.table_name_name {
+    font-size: 15px;
+    color: #888787;
+}
+
+.table_change_prc {
+    font-size: 22px;
+}
+
+.table_change_abs {
+
+}
+
+.table_chart {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.table_gain_prc {
+    font-size: 18px;
+}
+
+.table_gain_abs {
+
+}
+
+.table_shares {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.table_shares_price {
+    font-size: 14px;
+}
+
+.table_shares_amount {
+    font-size: 14px;
+}
+
+.table_shares_sum {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.color_green {
+    color: #009671
+}
+
+.color_red {
+    color: #ff1b1b
+}
+
+.text_bold {
+    font-weight: bold;
+}
+
+.share {
+    display: inline-block;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+.table_info {
+    margin-top: 25px;
+    font-size: 11px;
+    color: #676767;
+}
+
+.add_symbol {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.table_header_name {
+    font-size: 36px;
+}
+
+.table_loading_spinner {
+    width: 100%;
+    height: 30vh;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

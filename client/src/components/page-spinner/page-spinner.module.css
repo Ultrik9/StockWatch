@@ -1,0 +1,9 @@
+.spinner_container {
+    width: 100%;
+    min-width: 320px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
