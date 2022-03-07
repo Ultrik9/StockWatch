@@ -1,3 +1,5 @@
+//const serverUrl = 'http://localhost:5001';
+
 const protocol = 'https';
 const appDomain = 'test-her44.herokuapp.com';
 const serverGqlUrl = `${protocol}://${appDomain}/graphql`;
@@ -100,6 +102,10 @@ const serverMessages = {
     'bad_symbol': 'Error! No such symbol.',
     'no_symbols': 'Error! No symbols in database.',
 }
+
+/*
+bad_id
+ */
 
 const clientMessages = {
     'logoutError': 'An error occurred during logout.',

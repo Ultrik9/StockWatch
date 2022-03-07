@@ -38,6 +38,7 @@ function PanelRoute(props) {
             (async () => {
 
                 try {
+					
                     const authorizeResult = await authorizeMutation({});
 
                     if (authorizeResult.data.authorize.result) {
@@ -71,8 +72,11 @@ function PanelRoute(props) {
 
         } else {
 
-            authStore({login: {isLoggedIn: false, name: null, email: null, id: null}});
-            navigate('/login');
+            client.clearStore().then(()=>{
+                authStore({login: {isLoggedIn: false, name: null, email: null, id: null}});
+                navigate('/login');
+            })
+
         }
 
     }, []);

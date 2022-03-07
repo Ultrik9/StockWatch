@@ -91,6 +91,7 @@ function AddNewList(props) {
                 } catch (e) {
 
                     formsMessagesStore({...store, addNewList: {isEnabled: true, type: 'error', message: config.serverMessages['mutation_error']}});
+                    console.log(e)
 
                     setFormData(formData => ({...formData, isSubmitted: false}));
 

@@ -121,7 +121,6 @@ function ListTable({selectedListId}) {
     const rowsSorted = rows.slice(0, rows.length - 1).sort(getComparator(order, orderBy));
     rowsSorted.push(rows[rows.length - 1]);
 
-
     const handleAddNewSymbolDone = () => {
 
         setSymbolModalOpen(false);

@@ -38,8 +38,6 @@ function ListSelectors(props) {
 
     useEffect(() => {
 
-        console.log('getUserListsData', getUserListsData)
-
         if (getUserListsData && getUserListsData.getUserLists.result) {
 
             setLists(getUserListsData.getUserLists.lists);

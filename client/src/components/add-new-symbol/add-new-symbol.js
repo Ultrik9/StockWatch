@@ -53,9 +53,6 @@ function AddNewSymbol(props) {
 
     }, [getAllSymbolsData]);
 
-    useEffect(() => {
-    }, [formData])
-
     const handleFormChangeSymbol = (e, newValue) => {
         setFormData({...formData, symbol: {...formData.symbol, value: {symbolId: newValue.symbolId, symbol: newValue.symbol, name: newValue.name}}});
     }
@@ -213,6 +210,7 @@ function AddNewSymbol(props) {
 
                 } catch (e) {
 
+                    console.log('error', e);
                     formsMessagesStore({...store, addSymbolToList: {isEnabled: true, type: 'error', message: config.serverMessages['mutation_error']}});
 
                     setFormData(formData => ({...formData, isSubmitted: false}));

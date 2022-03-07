@@ -163,6 +163,7 @@ const genericLoginResolver = {
                 };
 
             } catch (e) {
+                console.log('E', e);
                 return {
                     result: false,
                     errorReason: e.message,

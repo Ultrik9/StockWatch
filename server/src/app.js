@@ -39,12 +39,21 @@ dbConnect().then(() => {
     } else {
 
         const app = express();
+
         const port = process.env.PORT || '3000';
+
+
+        app.use((req, res, next) => {
+            if (req.header('x-forwarded-proto') !== 'https')
+                res.redirect(`https://${req.header('host')}${req.url}`);
+            else
+                next();
+        });
 
         app.set('views', path.join(__dirname, 'routes', 'pages', 'views'));
         app.set('view engine', 'pug');
 
-        app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
+        //app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 
         app.use(logger('dev'));
         app.use(express.json());

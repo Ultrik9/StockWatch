@@ -9,7 +9,6 @@ import styles from './modal.module.css';
 
 function ModalWindow({isOpen, Comp, onModalClose, compProps}) {
 
-
     return (
 
         <Modal

@@ -19,7 +19,7 @@ const initializeRoutes = (app) => {
 
     app.use('/graphql', graphqlHTTP((req, res, params) => {
         return {
-            graphiql: true,
+            graphiql: false,
             schema: schema,
             context: {req, res}
         }
