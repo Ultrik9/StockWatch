@@ -41,7 +41,7 @@ const genericSignupResolver = {
                     const accessToken = jwt.sign({id: id, type: 'access'}, process.env.KEY1, {expiresIn: config.accessTokenExpire / 1000});
                     const refreshToken = jwt.sign({id: id, type: 'refresh'}, process.env.KEY2, {expiresIn: config.refreshTokenExpire / 1000});
 
-                    context.res.cookie(config.refreshCookieName, refreshToken, {maxAge: config.refreshTokenExpire - config.tokenExpireDiff, httpOnly: true});
+                    context.res.cookie(config.refreshCookieName, refreshToken, {maxAge: config.refreshTokenExpire - config.tokenExpireDiff, httpOnly: true, sameSite: 'lax'});
                     context.res.header(config.accessTokenName, accessToken);
 
                     doc.sessions.push({
@@ -128,7 +128,7 @@ const genericLoginResolver = {
                 const accessToken = jwt.sign({id: id, type: 'access'}, process.env.KEY1, {expiresIn: config.accessTokenExpire / 1000});
                 const refreshToken = jwt.sign({id: id, type: 'refresh'}, process.env.KEY2, {expiresIn: config.refreshTokenExpire / 1000});
 
-                context.res.cookie(config.refreshCookieName, refreshToken, {maxAge: config.refreshTokenExpire - config.tokenExpireDiff, httpOnly: true});
+                context.res.cookie(config.refreshCookieName, refreshToken, {maxAge: config.refreshTokenExpire - config.tokenExpireDiff, httpOnly: true, sameSite: 'lax'});
                 context.res.header(config.accessTokenName, accessToken);
 
                 let session = doc.sessions.find(session => session.swuid === swuid);
@@ -203,7 +203,7 @@ const logoutResolver = {
                         }
                     }
 
-                    context.res.clearCookie(config.refreshCookieName, {httpOnly: true});
+                    context.res.clearCookie(config.refreshCookieName, {httpOnly: true, sameSite: 'lax'});
 
                     if (args.input.all) {
                         doc.sessions = [];
@@ -261,8 +261,17 @@ const addNewListResolver = {
                         };
                     }
 
+                    const listName = args.input.name.trim();
+
+                    if (listName.length === 0) {
+                        return {
+                            result: false,
+                            errorReason: 'bad_list_name'
+                        };
+                    }
+
                     doc.lists.push({
-                        name: args.input.name,
+                        name: listName,
                         isSocial: false,
                         symbols: []
                     });

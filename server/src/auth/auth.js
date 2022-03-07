@@ -154,7 +154,7 @@ const checkAndRefreshLogin = async (req, res, disableHeaders) => {
             await doc.save();
 
             if (!disableHeaders) {
-                res.cookie(config.refreshCookieName, refreshToken, {maxAge: config.refreshTokenExpire - config.tokenExpireDiff, httpOnly: true});
+                res.cookie(config.refreshCookieName, refreshToken, {maxAge: config.refreshTokenExpire - config.tokenExpireDiff, httpOnly: true, sameSite: 'lax'});
                 res.header(config.accessTokenName, accessToken);
             }
 

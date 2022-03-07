@@ -33,7 +33,7 @@ const googleSignupOrLogin = async (email, req, res) => {
             const accessToken = jwt.sign({id: id, type: 'access'}, process.env.KEY1, {expiresIn: config.accessTokenExpire / 1000});
             const refreshToken = jwt.sign({id: id, type: 'refresh'}, process.env.KEY2, {expiresIn: config.refreshTokenExpire / 1000});
 
-            res.cookie(config.refreshCookieName, refreshToken, {maxAge: config.refreshTokenExpire - config.tokenExpireDiff, httpOnly: true});
+            res.cookie(config.refreshCookieName, refreshToken, {maxAge: config.refreshTokenExpire - config.tokenExpireDiff, httpOnly: true, sameSite: 'lax'});
 
             doc.sessions.push({
                 timestamp: Date.now(),
@@ -55,7 +55,7 @@ const googleSignupOrLogin = async (email, req, res) => {
             const accessToken = jwt.sign({id: id, type: 'access'}, process.env.KEY1, {expiresIn: config.accessTokenExpire / 1000});
             const refreshToken = jwt.sign({id: id, type: 'refresh'}, process.env.KEY2, {expiresIn: config.refreshTokenExpire / 1000});
 
-            res.cookie(config.refreshCookieName, refreshToken, {maxAge: config.refreshTokenExpire - config.tokenExpireDiff, httpOnly: true});
+            res.cookie(config.refreshCookieName, refreshToken, {maxAge: config.refreshTokenExpire - config.tokenExpireDiff, httpOnly: true, sameSite: 'lax'});
 
             let session = doc.sessions.find(session => session.swuid === swuid);
 
@@ -123,7 +123,7 @@ const googleRedirectController = async (req, res, next) => {
                     const token = await googleSignupOrLogin(googleUserInfoResponse.data['email'], req, res);
 
                     if (token) {
-                        res.cookie(config.socialAuthTempCookieName, token);
+                        res.cookie(config.socialAuthTempCookieName, token, {sameSite: 'lax'});
                         res.redirect('/panel');
                     } else {
                         res.render('error', config.errorMessageOther);

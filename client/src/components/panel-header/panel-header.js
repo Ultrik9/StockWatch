@@ -27,6 +27,7 @@ function PanelHeader() {
         (async () => {
 
             try {
+
                 const logoutResult = await logoutMutation({
                     variables: {input: {all: isAll}}
                 });

@@ -111,14 +111,19 @@ function AddNewList(props) {
             </div>
             <form onSubmit={handleFormSubmit} className="single_line_form">
                 <div className="single_line_form_text">
-                    <TextField error={formData.name.isInvalid}
+                    <TextField value={formData.name.value}
+                               error={formData.name.isInvalid}
                                helperText={formData.name.errorMessage}
                                inputProps={{maxLength: config.formsConfig.newListName.maxLength}}
-                               name="name" onChange={handleFormChange}
-                               className="form_element" label="List name" variant="outlined" size="small"/>
+                               name="name"
+                               onChange={handleFormChange}
+                               className="form_element"
+                               label="List name"
+                               variant="outlined"
+                               size="small"/>
                 </div>
                 <div className="single_line_form_button">
-                    <SubmitButton loading={newListLoading} disabled={formData.isSubmitted} buttonText={'CREATE LIST'} size={'medium'} variant={'contained'} class={'form_element'}/>
+                    <SubmitButton loading={newListLoading} disabled={formData.isSubmitted} buttonText={'CREATE'} size={'medium'} variant={'contained'} class={'form_element'}/>
                 </div>
             </form>
         </>

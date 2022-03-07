@@ -98,6 +98,7 @@ const serverMessages = {
     'symbols_limit_exceeded': 'Symbols limit reached. You cant add any more symbols.',
     'user_exist': 'This email is already registered with StockWatch.',
     'bad_list': 'Error! No such list-table.',
+    'bad_list_name': 'Error! Bad list name.',
     'no_user': 'Error! No such user.',
     'bad_symbol': 'Error! No such symbol.',
     'no_symbols': 'Error! No symbols in database.',

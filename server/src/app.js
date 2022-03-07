@@ -12,7 +12,7 @@ const cookieFingerprint = require('./middleware/swuid');
 const customHeaders = require('./middleware/custom-headers');
 const schedule = require('node-schedule');
 
-const tasks = require('./tasks/finhub');
+const tasks = require('./tasks/finnhub');
 
 const dbConnect = require('./db/connect');
 
@@ -33,8 +33,8 @@ dbConnect().then(() => {
             cluster.fork();
         });
 
-        const prices = schedule.scheduleJob('*/3 * * * *', () => tasks.finhubPrices());
-        const candles = schedule.scheduleJob('*/15 * * * *', () => tasks.finhubCandles());
+        const prices = schedule.scheduleJob('*/3 * * * *', () => tasks.finnhubPrices());
+        const candles = schedule.scheduleJob('*/15 * * * *', () => tasks.finnhubCandles());
 
     } else {
 

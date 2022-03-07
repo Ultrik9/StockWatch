@@ -4,7 +4,6 @@
 .page_container {
     width: 100%;
     max-width: 1200px;
-    min-width: 320px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -13,9 +12,10 @@
 
 .section_wrap {
     width: 100%;
-    min-width: 850px;
-    margin-top: calc(64px + 50px);
-    margin-bottom: calc(64px + 50px);
+    min-width: 360px;
+    overflow-x: auto;
+    margin-top: 114px;
+    margin-bottom: 114px;
     padding: 50px;
     border-radius: 4px;
     background-color: #FFFFFF;

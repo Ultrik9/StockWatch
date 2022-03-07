@@ -9,7 +9,7 @@ const maxSymbols = 50;
 
 const candlesStartDiff = 3 * 86400;
 
-const finhubBatchQueryTS = 1300;
+const finnhubBatchQueryTS = 1300;
 
 const maxStocksAmount = 1000000;
 const minStocksPrice = 0.01;
@@ -56,7 +56,7 @@ module.exports = {
     maxLists,
     maxSymbols,
     candlesStartDiff,
-    finhubBatchQueryTS,
+    finnhubBatchQueryTS,
     swuidCookieName,
     accessTokenName,
     refreshCookieName,

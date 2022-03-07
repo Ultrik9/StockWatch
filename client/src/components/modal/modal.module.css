@@ -17,3 +17,9 @@
     right: 0;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 640px) {
+    .modal {
+        width: 380px;
+    }
+}

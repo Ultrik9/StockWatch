@@ -55,7 +55,7 @@ const shareController = async (req, res, next) => {
     }
 
     if (userDoc.lists.length >= config.maxLists) {
-        return res.render('error', {...config.errorMessageShare, errorMessage: 'you can\'t add any more lists'});
+        return res.render('error', {...config.errorMessageShare, errorMessage: 'You can\'t add any more lists'});
 
     }
 
