@@ -38,6 +38,12 @@ function AddNewList(props) {
 
         formsMessagesStore({...store, addNewList: {isEnabled: false, type: null, message: null}});
 
+        setFormData(
+            (formData) => {
+                return {...formData, name: {...formData.name, value: formData.name.value.trim()}};
+            }
+        );
+
         if (formData.name.value === '') {
             setFormData(
                 (formData) => {
