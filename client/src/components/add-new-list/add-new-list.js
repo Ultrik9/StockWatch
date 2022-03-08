@@ -27,7 +27,7 @@ function AddNewList(props) {
     });
 
     const handleFormChange = (e) => {
-        setFormData({...formData, [e.target.name]: {...formData[e.target.name], value: e.target.value}});
+        setFormData({...formData, [e.target.name]: {...formData[e.target.name], value: e.target.value.trimStart()}});
     }
 
     const handleFormSubmit = (e) => {
@@ -37,12 +37,6 @@ function AddNewList(props) {
         let isFormValid = true;
 
         formsMessagesStore({...store, addNewList: {isEnabled: false, type: null, message: null}});
-
-        setFormData(
-            (formData) => {
-                return {...formData, name: {...formData.name, value: formData.name.value.trim()}};
-            }
-        );
 
         if (formData.name.value === '') {
             setFormData(
